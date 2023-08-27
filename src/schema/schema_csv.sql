@@ -1,4 +1,5 @@
-CREATE TABLE IF NOT EXISTS transactions (
+DROP TABLE IF EXISTS transactions;
+CREATE TABLE  transactions (
   transaction_id TEXT PRIMARY KEY,
   account TEXT,
   category TEXT,
@@ -8,9 +9,5 @@ CREATE TABLE IF NOT EXISTS transactions (
   description TEXT,
   to_account TEXT,
   to_amount REAL,
-  transaction_type TEXT,
-  FOREIGN KEY (account_id) REFERENCES accounts (account_id),
-  FOREIGN KEY (to_account_id) REFERENCES accounts (account_id),
-  FOREIGN KEY (category_id) REFERENCES categories (category_id)
-);
-DELETE FROM transactions;
+  transaction_type TEXT
+)

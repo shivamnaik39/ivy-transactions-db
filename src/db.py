@@ -43,7 +43,7 @@ def insert_categories(db_file, categories):
     conn.close()
 
 
-def insert_transactions(db_file, transactions):
+def insert_transactions_json(db_file, transactions):
     conn = sqlite3.connect(db_file)
     cursor = conn.cursor()
 
@@ -55,3 +55,18 @@ def insert_transactions(db_file, transactions):
 
     conn.commit()
     conn.close()
+    
+    
+def insert_transactions_csv(db_file, transactions):
+    conn = sqlite3.connect(db_file)
+    cursor = conn.cursor()
+
+    transactions_data_string = """INSERT INTO transactions(transaction_id, account, category,
+    amount, date_time, title, description, to_account, to_amount, transaction_type) 
+    VALUES (?,?,?,?,?,?,?,?,?,?)"""
+
+    cursor.executemany(transactions_data_string, transactions)
+
+    conn.commit()
+    conn.close()
+

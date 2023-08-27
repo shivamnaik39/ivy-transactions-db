@@ -37,7 +37,7 @@ def main():
         #  Insert all the records into the respective tables
         # insert_accounts(db_file, accounts)
         # insert_categories(db_file, categories)
-        insert_transactions(db_file, transactions)
+        insert_transactions_csv(db_file, transactions)
         logger.info("Data inserted into the tables successfully.")
         logger.info(f"Sqlite database created and stored at: {db_file} ")
 

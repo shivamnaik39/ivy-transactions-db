@@ -1,9 +1,12 @@
-CREATE TABLE IF NOT EXISTS accounts (account_id TEXT PRIMARY KEY, name TEXT);
-CREATE TABLE IF NOT EXISTS categories (
+DROP TABLE IF EXISTS accounts;
+DROP TABLE IF EXISTS categories;
+DROP TABLE IF EXISTS transactions;
+CREATE TABLE accounts (account_id TEXT PRIMARY KEY, name TEXT);
+CREATE TABLE categories (
     category_id TEXT PRIMARY KEY,
     name TEXT
 );
-CREATE TABLE IF NOT EXISTS transactions (
+CREATE TABLE transactions (
     transaction_id TEXT PRIMARY KEY,
     account_id TEXT,
     category_id TEXT,
@@ -17,7 +20,4 @@ CREATE TABLE IF NOT EXISTS transactions (
     FOREIGN KEY (account_id) REFERENCES accounts (account_id),
     FOREIGN KEY (to_account_id) REFERENCES accounts (account_id),
     FOREIGN KEY (category_id) REFERENCES categories (category_id)
-);
-DELETE FROM accounts;
-DELETE FROM categories;
-DELETE FROM transactions;
+)
