@@ -1,7 +1,7 @@
 
 # ivy-transactions-db
 
-Unofficial companion tool to add the transactions data generated and exported by ivy wallet from json/csv to a sqlite database for deep analytics purposes.
+Unofficial companion tool to add the transactions data generated and exported by [ivy wallet](https://github.com/Ivy-Apps/ivy-wallet) from json/csv to a sqlite database for deep analytics purposes.
 
 With all the data in a SQL database, it opens up a wide range of possibilities for gaining deeper insights into our personal expenses
 
